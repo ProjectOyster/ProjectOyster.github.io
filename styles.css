@@ -49,7 +49,7 @@
     margin-bottom: 5vh;
     margin-left: 3vh;
     margin-right: 3vh;
-    padding-top: 5vh;
+    padding-top: 2vh;
     font-size: 72px;
     text-align: center;
 
@@ -67,15 +67,6 @@
 
 
 /*--- Header Settings ---*/
-.header{
-    min-height: 80vh;
-    width: 100%;
-    background-color: #ffff;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-
-}
 
 nav{
     display: flex;
@@ -200,7 +191,7 @@ a {
     margin-top: 5%;
     margin-left: 10vh;
     margin-right: 10vh;
-    margin-bottom: 8vh;
+    margin-bottom: 3vh;
     display: flex;
     justify-content: space-between;
 }
@@ -271,10 +262,9 @@ button:active .button_top {
     100%{background-position:91% 0%}
 }
 
-*/
-
 .read-more-button {
     padding-left: 24vh;
+    padding-right: 24vh;
     display: inline-block;
     border-radius: 4px;
     background-color: #032539;
@@ -282,38 +272,88 @@ button:active .button_top {
     color: #FFFFFF;
     text-align: center;
     font-size: 17px;
-    padding: 16px;
+    padding: 2vh;
     width: 140px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
-   }
+    margin: 1vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
    
-   .read-more-button span {
+.read-more-button a {
+    color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-   }
+    text-decoration: none;
+}
    
-   .read-more-button span:after {
+.read-more-button a:after {
+    color: #FFFFFF;
     content: '>';
     position: absolute;
     opacity: 0;
     top: 0;
-    right: -15px;
+    right: -2px;
     transition: 0.5s;
-   }
+    text-decoration: none;
+}
    
-   .read-more-button:hover span {
+.read-more-button:hover a {
     padding-right: 15px;
-   }
+}
    
-   .read-more-button:hover span:after {
+.read-more-button:hover a:after {
     opacity: 1;
     right: 0;
-   }
+}
+*/
 
+
+
+
+[class^=btn-] {
+  position: relative;
+  font-size: 2vh;
+  display: block;
+  overflow: hidden;
+  padding: 2.25vh 3.5vh;
+  width: 100%;
+  height: 60px;
+  max-width: 200px;
+  margin: 1vh;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  text-align: center;
+}
+
+.btn-6 {
+  color: #032539;
+}
+.btn-6 span {
+  position: absolute;
+
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: #032539;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.btn-6:hover {
+  color: #fbf3f2;
+}
+.btn-6:hover span {
+  width: 225%;
+  height: 562.5px;
+}
+.btn-6:active {
+  background-color: #1c768f;
+}
 
 
 
@@ -329,9 +369,127 @@ button:active .button_top {
 
 
 /*--- Project/Product Page Settings start---*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+:root {
+  --bg-color-hsl: #fff;
+  --bg-color: hsl(var(--bg-color-hsl));
+  --bg-color-translucent: hsla(var(--bg-color-hsl), 0.95);
+  --bg-color-highlight: #ffc53e;
+  --color-text: hsl(46, 100%, 50%);
+  --color-text-highlight: hsl(192, 14%, 0%);
+  --page-width: 80ch;
+  --paragraph-font-size: min(max(1.2rem, 4vw), 1.4rem);
+  --header-font-size: min(max(2rem, 8vw), 4rem);
+  --space: 2rem;
+  --padding: 8vmin;
+  --duration: 2s;
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dark-mode {
+  --bg-color-hsl: 0, 0%, 7%;
+  --bg-color: hsl(var(--bg-color-hsl));
+  --bg-color-translucent: hsla(var(--bg-color-hsl), 0.95);
+  --bg-color-highlight: hsl(238, 70%, 40%);
+  --color-text: hsl(0, 0%, 80%);
+  --color-text-highlight: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lora", sans-serif;
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--bg-color);
+  transition: background calc(var(--duration) / 4) var(--ease);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: calc(var(--space) / 2) var(--padding);
+  width: 100%;
+  max-width: var(--page-width);
+  background-color: var(--bg-color-translucent);
+  transition: background calc(var(--duration) / 4) var(--ease);
+  min-height: 80vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+label {
+  font-size: 0.8rem;
+}
+
+main {
+  margin: 12rem auto;
+  padding: 0 var(--padding);
+  max-width: var(--page-width);
+}
 
 
+.text-highlight {
+  all: unset;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: color calc(var(--duration) / 4) var(--ease), background-color calc(var(--duration) / 4) var(--ease), background-size var(--duration) var(--ease);
+}
+.text-highlight.active {
+  color: var(--color-text-highlight);
+  background-size: 100% 100%;
+}
+[data-highlight=background] .text-highlight {
+  background-image: linear-gradient(var(--bg-color-highlight), var(--bg-color-highlight));
+}
+[data-highlight=half] .text-highlight {
+  --line-size: 0.5em;
+  background-image: linear-gradient(transparent calc(100% - var(--line-size)), var(--bg-color-highlight) var(--line-size));
+}
+[data-highlight=underline] .text-highlight {
+  --line-size: 0.15em;
+  background-image: linear-gradient(transparent calc(100% - var(--line-size)), var(--color-text) var(--line-size));
+}
+.text-highlight::before, .text-highlight::after {
+  position: absolute;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.text-highlight::before {
+  content: " [highlight start] ";
+}
+.text-highlight::after {
+  content: " [highlight end] ";
+}
 
+.wrapper {
+    opacity: 0;
+    position: absolute;
+    top:-10em;
+}
 
 
 
