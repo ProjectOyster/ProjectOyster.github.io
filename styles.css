@@ -1,0 +1,385 @@
+/*--- General Settings Start---*/
+:root{
+    --main-color: #fbf3f2
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  Helvetica, sans-serif, Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+
+.container-L{
+    width: 80%;
+    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    padding-top: 10vh;
+    min-height: 60vh;
+}
+
+.container-M{
+    width: 80%;
+    margin: auto;
+    margin-top: 1vh;
+    text-align: center;
+    padding-top: 100px;
+    min-height: 50vh;
+}
+
+.container-S{
+    width: 80%;
+    margin: auto;
+    margin-top: 1vh;
+    text-align: center;
+    padding-top: 100px;
+    min-height: 20vh;
+}
+
+.spacing {
+    min-height: 5vh;
+}
+
+.textbox-L{
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    padding-top: 5vh;
+    font-size: 72px;
+    text-align: center;
+
+}
+
+.textbox-M{
+    margin-top: 0.5vh;
+    margin-bottom: 5vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    font-size: 20px;
+    text-align: left;
+}
+
+
+
+/*--- Header Settings ---*/
+.header{
+    min-height: 80vh;
+    width: 100%;
+    background-color: #ffff;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    left: 95px;
+}
+
+
+/*The logo's css*/
+nav img{
+    position: absolute;
+    width: 320px;
+    height: 180px;
+    left: 100px;
+    top: 15px;
+}
+
+nav img:hover{
+    /* moves it upwards by 10px*/
+    transform: translateY(-10px);
+    /* sets the transition duration to 0.5s*/
+    transition-duration: 0.5s;
+    /* ease in and ease out when going through transitions*/
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+    top: 55px;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    top: 55px;
+}
+
+.nav-links ul li a{
+    color: #032539;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    top: 55px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #1c768f;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+h1 {
+    font-size: 9vh;
+    color: #032539;
+}
+
+.title-brand h1 {
+    font-size: 14vh;
+    color: #032539;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+h2 {
+    font-size: 8vh;
+    color: #032539;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+p {
+    font-size: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+a {
+    color:#032539;
+    text-decoration: none;
+}
+
+
+
+
+/*--- General Settings End---*/
+
+
+
+
+/*--- Home Page Settings start---*/
+.title-brand h1{
+    font-size: 12vh;
+    margin-top: 15vh;
+}
+
+
+.row {
+    margin-top: 5%;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    display: flex;
+    justify-content: space-between; /* Aligns the objects in an evenly matter */
+}
+
+.button_row {
+    margin-top: 5%;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    margin-bottom: 8vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column-text {
+    padding-left: 3vh;
+    padding-right: 3vh;
+    line-height: 1.5;
+}
+
+button {
+    /* Variables */
+   --button_radius: 0.75em;
+   --button_color: #e8e8e8;
+   --button_outline_color: #032539;
+   font-size: 18px;
+   font-weight: bold;
+   border: none;
+   border-radius: var(--button_radius);
+   background: var(--button_outline_color);
+}
+  
+.button_top {
+   display: block;
+   box-sizing: border-box;
+   border: 2px solid var(--button_outline_color);
+   border-radius: var(--button_radius);
+   padding: 0.75em 2em;
+   background: var(--button_color);
+   color: var(--button_outline_color);
+   transform: translateY(-0.2em);
+   transition: transform 0.2s ease;
+}
+  
+button:hover .button_top {
+    /* Pull the button upwards when hovered */
+   transform: translateY(-0.33em);
+}
+  
+button:active .button_top {
+    /* Push the button downwards when pressed */
+   transform: translateY(0);
+}
+
+/*
+.title-brand {
+    background: linear-gradient(27deg, #1c768f, #032539, #189ab4, #05445e);
+    background-size: 800% 800%;
+
+    -webkit-animation: Gradient-change 0s ease infinite;
+    -moz-animation: Gradient-change 0s ease infinite;
+    animation: Gradient-change 0s ease infinite;
+}
+
+@-webkit-keyframes Gradient-change {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@-moz-keyframes Gradient-change {
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+@keyframes Gradient-change { 
+    0%{background-position:91% 0%}
+    50%{background-position:10% 100%}
+    100%{background-position:91% 0%}
+}
+
+*/
+
+.read-more-button {
+    padding-left: 24vh;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #032539;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 140px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   .read-more-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .read-more-button span:after {
+    content: '>';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   .read-more-button:hover span {
+    padding-right: 15px;
+   }
+   
+   .read-more-button:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+/*--- Home Page Settings end---*/
+
+
+/*--- Project/Product Page Settings start---*/
+
+
+
+
+
+
+
+
+
+/*---Project/Product Page Settings end---*/
+
+
+
+/*--- About Page Settings start---*/
+
+
+
+
+
+
+/*---About Page Settings end---*/
+
+
+
+
+/*--- Contact Page Settings start---*/
+
+
+
+
+
+
+
+
+/*---Contact Page Settings end---*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
