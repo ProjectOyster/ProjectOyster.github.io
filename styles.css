@@ -87,6 +87,8 @@ nav img{
     height: 180px;
     left: 100px;
     top: 15px;
+    transform: translateY(0px);
+    transition: transform 0.2s ease;
 }
 
 nav img:hover{
@@ -250,12 +252,23 @@ a {
   flex-basis: 31%;
   background: #d5eff7;
   border-radius: 10px;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
   padding: 2vh 2vh;
   box-sizing: border-box;
   max-width: 20em;
-
+  transform: translateY(0px);
+  transition: transform 0.2s ease;
 }
+
+.column-card:hover {
+  /* moves it upwards by 10px*/
+  transform: translateY(-10px);
+  /* sets the transition duration to 0.5s*/
+  transition-duration: 0.5s;
+  /* ease in and ease out when going through transitions*/
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 
 .column-card h4 {
   font-size: 3vh;
@@ -428,9 +441,10 @@ button:active .button_top {
   background-color: #1c768f;
 }
 
+
 .sphere-container{
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -442,8 +456,188 @@ button:active .button_top {
   left: 0;
 }
 
+/* Rotating Sphere */
+
+.sphere {
+  width: 35vh;
+  height: 35vh;
+  margin: 1em;
 
 
+  -webkit-animation: spinSphere 10s infinite linear;
+          animation: spinSphere 10s infinite linear;
+  transform-style: preserve-3d;
+}
+
+[class^=ring] {
+  position: absolute;
+  width: 35vh;
+  height: 35vh;
+  border: 1px solid #1c768f;
+  border-radius: 50%;
+}
+
+[class$="1"] {
+  transform: rotateY(10deg);
+}
+
+[class$="2"] {
+  transform: rotateY(20deg);
+}
+
+[class$="3"] {
+  transform: rotateY(30deg);
+}
+
+[class$="4"] {
+  transform: rotateY(40deg);
+}
+
+[class$="5"] {
+  transform: rotateY(50deg);
+}
+
+[class$="37"] {
+  transform: rotateY(60deg);
+}
+
+[class$="7"] {
+  transform: rotateY(70deg);
+}
+
+[class$="8"] {
+  transform: rotateY(80deg);
+}
+
+[class$="9"] {
+  transform: rotateY(90deg);
+}
+
+[class$="10"] {
+  transform: rotateY(100deg);
+}
+
+[class$="11"] {
+  transform: rotateY(110deg);
+}
+
+[class$="12"] {
+  transform: rotateY(120deg);
+}
+
+[class$="13"] {
+  transform: rotateY(130deg);
+}
+
+[class$="14"] {
+  transform: rotateY(140deg);
+}
+
+[class$="15"] {
+  transform: rotateY(150deg);
+}
+
+[class$="16"] {
+  transform: rotateY(160deg);
+}
+
+[class$="17"] {
+  transform: rotateY(170deg);
+}
+
+[class$="18"] {
+  transform: rotateX(180deg);
+}
+
+[class$="19"] {
+  transform: rotateX(190deg);
+}
+
+[class$="20"] {
+  transform: rotateX(200deg);
+}
+
+[class$="21"] {
+  transform: rotateX(210deg);
+}
+
+[class$="22"] {
+  transform: rotateX(220deg);
+}
+
+[class$="23"] {
+  transform: rotateX(230deg);
+}
+
+[class$="24"] {
+  transform: rotateX(240deg);
+}
+
+[class$="25"] {
+  transform: rotateX(250deg);
+}
+
+[class$="26"] {
+  transform: rotateX(260deg);
+}
+
+[class$="27"] {
+  transform: rotateX(270deg);
+}
+
+[class$="28"] {
+  transform: rotateX(280deg);
+}
+
+[class$="29"] {
+  transform: rotateX(290deg);
+}
+
+[class$="30"] {
+  transform: rotateX(300deg);
+}
+
+[class$="31"] {
+  transform: rotateX(310deg);
+}
+
+[class$="32"] {
+  transform: rotateX(320deg);
+}
+
+[class$="33"] {
+  transform: rotateX(330deg);
+}
+
+[class$="34"] {
+  transform: rotateX(340deg);
+}
+
+[class$="35"] {
+  transform: rotateX(350deg);
+}
+
+[class$="36"] {
+  transform: rotateX(360deg);
+}
+
+@-webkit-keyframes spinSphere {
+  from {
+    transform: rotateZ(60deg) rotateX(0);
+  }
+  to {
+    transform: rotateZ(60deg) rotateX(360deg);
+  }
+}
+
+@keyframes spinSphere {
+  from {
+    transform: rotateZ(60deg) rotateX(0);
+  }
+  to {
+    transform: rotateZ(60deg) rotateX(360deg);
+  }
+}
 
 
 
@@ -627,4 +821,3 @@ main {
 
 
 
- 
