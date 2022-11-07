@@ -107,40 +107,5 @@ characters.forEach((character, index) => {
   circle.appendChild(span);
 });
 
-const infoCardsLarge = document.querySelectorAll('.info-card-L')
-
-infoCardsLarge.forEach((card) => {
-    card.addEventListener('click', () => {
-        const description = card.querySelector('.description')
-        
-        if (!description.hasAttribute('style') && description.scrollHeight > 24) {
-        description.setAttribute('style', `height: ${description.scrollHeight}px`)
-        card.classList.add('-expanded')
-        } else {
-        description.removeAttribute('style')
-        card.classList.remove('-expanded') 
-        }
-        
-    })
-})
-
-const infoCardsMedium = document.querySelectorAll('.info-card-M')
-
-infoCardsMedium.forEach((card) => {
-    card.addEventListener('click', () => {
-        const description = card.querySelector('.description')
-        
-        if (!description.hasAttribute('style') && description.scrollHeight > 24) {
-        description.setAttribute('style', `height: ${description.scrollHeight}px`)
-        card.classList.add('-expanded')
-        } else {
-        description.removeAttribute('style')
-        card.classList.remove('-expanded') 
-        }
-        
-    })
-})
-
-
 
 
