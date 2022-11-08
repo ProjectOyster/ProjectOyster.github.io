@@ -1,0 +1,97 @@
+<!DOCTYPE = html>
+<html lang="en">
+    
+    <head>
+        <meta name="viewport" content="with=device-width, initial scale=1.0">
+        <title>PROJECT OYSTER</title>
+        <link rel="stylesheet" href="styles.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        >
+        <div class="wrapper">
+            <label>Style:</label>
+            <select id="highlight-style">
+              <option>background</option>
+              <option>half</option>
+              <option>underline</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <input type="checkbox" id="mode" />
+            <label for="mode">Dark Mode</label>
+        </div>
+    </head>
+    
+    <body>
+        <!-- Header -->
+        <section class="header">
+            <nav>
+                <!-- Navigation Logo for project OYSTER-->
+                <a href="index.html"><img src="images/logo background removed.png"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="project-product.html">Project/Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <!-- 
+                            <li><a href="">Upload</a></li>
+                        --> 
+                    </ul>
+                </div>
+            </nav>
+            <div class="container-L">
+                <div class="textbox-L" >
+                    <h1 >ABOUT US</h1>
+                </div>
+                <div class="info-card-container">
+                    <div class="info-card-L">
+                        <div class="image" style="height:350px;">
+                            <img src="images/our team.jpg" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                Our Team
+                            </div>
+                            <div class="description">
+                                Our team currently consists of three members, Jeffrey Chang(Left), Ray Yeung(Middle), Wilson Ho(Right). We all come from St. Paul's College, and we are deeply motivated to creating a solution combating invasive species.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--img src="images/our team.jpg" style="height:auto ;width: 100%; background: rgba(0, 0, 0, 0.3)"-->
+            </div>
+        </section>
+        <div class="mouse-tracker">
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="script.js"></script>
+        <script>
+            const infoCardsLarge = document.querySelectorAll('.info-card-L')
+
+            infoCardsLarge.forEach((card) => {
+                card.addEventListener('click', () => {
+                    const description = card.querySelector('.description')
+                    
+                    if (!description.hasAttribute('style') && description.scrollHeight > 24) {
+                    description.setAttribute('style', `height: ${description.scrollHeight}px`)
+                    card.classList.add('-expanded')
+                    } else {
+                    description.removeAttribute('style')
+                    card.classList.remove('-expanded') 
+                    }
+                    
+                })
+            })
+        </script>
+
+    </body>
+    <footer>
+    </footer>
+</html>

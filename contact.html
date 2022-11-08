@@ -1,0 +1,168 @@
+<!DOCTYPE = html>
+<html lang="en">
+    
+    <head>
+        <meta name="viewport" content="with=device-width, initial scale=1.0">
+        <title>PROJECT OYSTER</title>
+        <link rel="stylesheet" href="styles.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        >
+        <div class="wrapper">
+            <label>Style:</label>
+            <select id="highlight-style">
+              <option>background</option>
+              <option>half</option>
+              <option>underline</option>
+            </select>
+          </div>
+          <div class="wrapper">
+            <input type="checkbox" id="mode" />
+            <label for="mode">Dark Mode</label>
+        </div>
+    </head>
+    
+    <body>
+        <!-- Header -->
+        <section class="header">
+            <nav>
+                <!-- Navigation Logo for project OYSTER-->
+                <a href="index.html"><img src="images/logo background removed.png"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="project-product.html">Project/Product</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="cotainer-L">
+                <div class="textbox-M">
+                    <div class="info-card-container-X">
+                        <div class="info-card-X">
+                            <div class="info">
+                                <div class="title">
+                                    Contact Info
+                                </div>
+                                <div class="description" >
+                                    <h4>Contact Email:</h4>
+                                    <a href="mailto:the.project.oyster@gmail.com?subject=Hello%20Project%20Oyster!%20&body=Hello%20Project%20Oyster%2C%20I%20have%20stumbled%20across%20your%20website%2C%20and%20I%20am%20interested%20in%20what%20you%20guys%20are%20doing!%20Here%20are%20some%20stuff%20I%20want%20to%20tell%20you%20about%3A">
+                                        <p class="link-2">the.project.oyster@gmail.com</p>
+                                    </a>
+                                    <div class="spacing"></div>
+                                    <h4>Address:</h4>   
+                                    <p>
+                                        69 Bonham Rd, Mid-Levels, Hong Kong
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="textbox-M">
+                    <div class="column-icon">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe width="960" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=st%20pauls%20college&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                <a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a>
+                                <br>
+                                <style>
+                                    .mapouter {
+                                        padding-left: 8%;
+                                        padding-right: auto;
+                                        display: block;
+                                        position:relative;
+                                        text-align:right;
+                                        height:500px;
+                                        width:960px;
+                                        border-radius: 16px;
+                                        z-index: 1;
+                                    }
+
+                                </style>
+                                <a href="https://www.embedgooglemap.net">google map for website</a>
+                                <style>
+                                    .gmap_canvas {
+                                        display: block;
+                                        margin: 1em 2.5em;
+                                        overflow:hidden;
+                                        background:none!important;
+                                        height:500px;
+                                        width:960px;
+                                        border-radius: 16px;
+                                        align-items: center;
+                                        align-content: center;
+                                        transform: translateY(0px);
+                                        transition: transform 1.5s ease;
+                                        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+                                        z-index: 2;
+                                    }
+
+                                    .gmap_canvas:hover {
+                                        transform: translateY(-10px);
+                                        /* sets the transition duration to 0.5s*/
+                                        transition-duration: 1.5s;
+                                        /* ease in and ease out when going through transitions*/
+                                        transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="mouse-tracker">
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="script.js"></script>
+        <script>
+            const infoCardsMedium = document.querySelectorAll('.info-card-M')
+
+            infoCardsMedium.forEach((card) => {
+                card.addEventListener('click', () => {
+                    const description = card.querySelector('.description')
+                    
+                    if (!description.hasAttribute('style') && description.scrollHeight > 24) {
+                    description.setAttribute('style', `height: ${description.scrollHeight}px`)
+                    card.classList.add('-expanded')
+                    } else {
+                    description.removeAttribute('style')
+                    card.classList.remove('-expanded') 
+                    }
+                    
+                })
+            })
+
+            const infoCardsLarge = document.querySelectorAll('.info-card-L')
+
+            infoCardsLarge.forEach((card) => {
+                card.addEventListener('click', () => {
+                    const description = card.querySelector('.description')
+                    
+                    if (!description.hasAttribute('style') && description.scrollHeight > 24) {
+                    description.setAttribute('style', `height: ${description.scrollHeight}px`)
+                    card.classList.add('-expanded')
+                    } else {
+                    description.removeAttribute('style')
+                    card.classList.remove('-expanded') 
+                    }
+                    
+                })
+            })
+        </script>
+
+
+
+    </body>
+    <footer>
+        
+    </footer>
+</html>
+
